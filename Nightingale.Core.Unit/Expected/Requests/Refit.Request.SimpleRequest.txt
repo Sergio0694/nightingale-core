@@ -1,0 +1,15 @@
+﻿using System.Threading.Tasks;
+using Refit;
+
+namespace Requests
+{
+    /// <summary>
+    /// An <see langword="interface"/> for a simple service that exposes a single REST API
+    /// </summary>
+    public interface IRestService
+    {
+        [Get(https://www.reddit.com/r/windows10/best.json)]
+        [Headers("User Agent: NightingaleUWP")]
+        Task<string> GetGetWindows10TrendingAsync(string limit = "50", string raw_json = "true", );
+    }
+}
