@@ -56,5 +56,17 @@ namespace Nightingale.Core.CodeGenerators
         {
             return GenerateCode(collection, language, CodegenCategory.Collection);
         }
+
+        /// <inheritdoc/>
+        public string GenerateCode(WorkspaceRequest request, string template)
+        {
+            return StaticStubbleRenderer.Render(template, request);
+        }
+
+        /// <inheritdoc/>
+        public string GenerateCode(WorkspaceCollection collection, string template)
+        {
+            return StaticStubbleRenderer.Render(template, collection);
+        }
     }
 }
