@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
+using Refit;
 
-namespace Nightingale.Core.CodeGenerators.Templates
+namespace Requests
 {
-    class Refit
+    /// <summary>
+    /// An <see langword="interface"/> for a simple service that exposes a single REST API
+    /// </summary>
+    public interface IRestService
     {
+        [Get({{BaseUrl}})]
+        {{#Headers}}
+        [Headers("{{Key}}: {{Value}}")]
+        {{/Headers}}
+        Task<string> Get{{Name}}Async({{#Queries}}string {{Key}} = "{{Value}}", {{/Queries}});
     }
 }

@@ -28,7 +28,7 @@ namespace Nightingale.Core.CodeGenerators
         private string GenerateCode(object data, CodegenLanguage language, CodegenCategory category)
         {
             // Get the template to use
-            string id = $"{category}.{category}.mustache";
+            string id = $"{language}.{category}.mustache";
             string template = RequestTemplates.GetOrAdd(id, key =>
             {
                 Assembly assembly = Assembly.GetExecutingAssembly();

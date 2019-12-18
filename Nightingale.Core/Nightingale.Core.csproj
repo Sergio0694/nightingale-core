@@ -5,7 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CodeGenerators\Templates\Refit.mustache" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="CodeGenerators\Templates\Requests\Refit.Request.mustache">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Stubble.Core" Version="1.6.3" />
   </ItemGroup>
 
 </Project>
